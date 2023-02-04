@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import {Sidebar as ProSidebar, Menu, MenuItem, useProSidebar, sidebarClasses, menuClasses} from "react-pro-sidebar"
 
-import {Box, IconButton, menuItemClasses, Typography, useTheme} from "@mui/material"
+import {Box, IconButton, menuItemClasses, Typography, Divider, useTheme} from "@mui/material"
 import {Link} from "react-router-dom"
 import { colorTokens } from "../../theme"
 
@@ -92,15 +92,16 @@ const Sidebar = () => {
                             setSelected={setSelected}
                         />
 
-                        {!collapsed && (
-                            <Typography 
-                                variant="h6"
-                                color={colors.grey[300]}
-                                sx={{ m: "15px 0 5px 20px"}}
-                            > 
-                                Tools
-                            </Typography>
-                        )}
+                        <Divider>
+                            {!collapsed && (
+                                <Typography 
+                                    variant="h6"
+                                    color={colors.grey[300]}
+                                > 
+                                    Tools
+                                </Typography>
+                            )}
+                        </Divider> 
                         
                         <Item 
                             title="Calender"
@@ -117,15 +118,16 @@ const Sidebar = () => {
                             setSelected={setSelected}
                         />
 
-                        {!collapsed && (
-                            <Typography 
-                                variant="h6"
-                                color={colors.grey[300]}
-                                sx={{ m: "15px 0 5px 20px"}}
-                            > 
-                                Settings
-                            </Typography>
-                        )}  
+                        <Divider>
+                            {!collapsed && (
+                                <Typography 
+                                    variant="h6"
+                                    color={colors.grey[300]}
+                                > 
+                                    Settings
+                                </Typography>
+                            )}
+                        </Divider>  
                         
                         <Item 
                             title="Settings"
